@@ -108,6 +108,12 @@ RESTRICT_SYSLOG = "3"
 csf -ra
 ```
 
+Allow all access of all ports
+
+```
+vi /etc/csf/csf.allow
+```
+
 FAQs to Install CSF on Ubuntu 20.04
 1) CSF is not a firewall, but an interface to iptables?
 CSF protects the user from the DDOS or jellyfish robots. You can consider security using the iptables.
