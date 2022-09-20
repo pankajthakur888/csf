@@ -26,36 +26,57 @@ apt install sendmail-bin
 Step 3 - Installing the CSF
 1) Now, you should navigate to /usr/src.
 
+```
 cd /usr/src
+```
 2) Download the CSF distribution, by using the following command:
 
+```
 wget https://download.configserver.com/csf.tgz
+```
+
 3) Next extract the CSF.
 
+```
 tar -xzf csf.tgz
+```
+
 4) Then, navigate to /usr/src/csf.
 
+```
 cd csf
+```
 5) After that, eun the following command:
 
+```
 sh install.sh
+```
 6) Verify necessary iptables modules for the CSF are available.
 
+```
 perl /usr/local/csf/bin/csftest.pl
+```
 7) Now, confirm that all tests report OK. You will notice the below result:
 
 RESULT: csf should function on this server
 8) Then, verify CSF status after the installation:
 
+```
 csf -v
+```
+
 9) You will see the below results:
 
+```
 csf: v14.02 (generic)
+```
 *WARNING* TESTING mode is enabled - do not forget to disable it in the configuration
 Step 4 - Configuring the CSF
 1) The CSF runs in the TESTING mode by-default. Next, you need to edit /etc/csf/csf.conf to disable the TESTING mode.
 
+```
 nano /etc/csf/csf.conf
+```
 2) Now, locate the line TESTING = 1. Now, change the value to 0.
 
 TESTING = "0"
@@ -66,7 +87,9 @@ RESTRICT_SYSLOG = "3"
 
 5) You will stop and reload the CSF with -ra option:
 
+```
 csf -ra
+```
 FAQs to Install CSF on Ubuntu 20.04
 1) CSF is not a firewall, but an interface to iptables?
 CSF protects the user from the DDOS or jellyfish robots. You can consider security using the iptables.
